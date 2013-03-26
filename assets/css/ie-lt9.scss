@@ -1,0 +1,50 @@
+// THIS STYLESHEET BRINGS TOGETHER THE SITE STYLES/
+// IT IS DONE IN THIS MANNER SO WE CAN GENERATE AN IE STYLESHEET AND STYLEGUIDE
+
+@import "compass/typography/vertical_rhythm";
+@import "compass/css3";
+@import "compass/utilities";
+
+
+// Try and keep css in this file to a minimum
+@import "libs/settings";
+@import "libs/mixins";
+
+// Import the site style combined
+@import "libs/reset";
+@include grid_columns_ie(12);
+@import "libs/content";
+
+.container {
+	width: $dk;
+}
+
+
+html.ie7 {
+	.row {
+		.span12-1,
+		.span12-2,
+		.span12-3,
+		.span12-4,
+		.span12-5,
+		.span12-6,
+		.span12-7,
+		.span12-8,
+		.span12-9,
+		.span12-10,
+		.span12-11,
+		.span12-12 {
+			padding-left: 0;
+			padding-right: 0;
+			margin-right: 10px;
+		}
+	}
+}
+
+// Import media quieries
+// @import "breakpoints/bp1";
+// @import "breakpoints/bp2";
+@import "breakpoints/bp3";
+
+// Import state styles
+@import "libs/states";

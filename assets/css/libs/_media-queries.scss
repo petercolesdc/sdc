@@ -1,0 +1,66 @@
+// ::Media queries 
+// ------------------------------------------------------------ 
+
+
+@media screen and (min-width: em-font($ss)) {
+	.container {
+		min-width: 95%;
+	}
+	.row {
+		@include grid_columns(3);
+		@include grid_columns(4);
+	}
+	@import "../breakpoints/bp1";
+}
+
+
+@media screen and (min-width: em-font($tb)) {
+	.container {
+		min-width: em-font(680px);
+	}
+	.row {
+		@include grid_columns(6);
+		@include grid_columns(8);
+	}
+	@import "../breakpoints/bp2";
+}
+
+
+@media screen and (min-width: em-font($dk)) {
+	.container {
+		max-width: em-font(1080px);
+	}
+	.row {
+		@include grid_columns(12);
+	}
+	@import "../breakpoints/bp3";
+}
+
+@media screen and (min-width: em-font($max-bp)) {
+	
+}
+
+
+// Hide things at breakpoints. This is sometimes needed, but a little dirty / ugly.
+// Little as possible please
+
+// Small screen only (up to tablet width only)
+@media screen and (max-width: em-font($tb)) {
+	.is-hidden-ss {
+		display: none!important;	
+	}
+}
+
+// Tablet only (between tablet and desktop)
+@media screen and (min-width: em-font($tb)) and (max-width: em-font($dk)) {
+	.is-hidden-tb {
+		display: none!important;
+	}
+}
+	
+// Small screen to tablet (between small screen and desktop)
+@media screen and (max-width: em-font($dk)) {
+	.is-hidden-ss-tb {
+		display: none!important;
+	}
+}

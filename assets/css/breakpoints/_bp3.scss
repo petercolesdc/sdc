@@ -1,0 +1,22 @@
+.global-header {
+	nav {
+		li {
+			margin-right: 1em;
+		}
+	}
+}
+
+.production-list .row {
+	aside .widget {
+		//padding-left: 10%;
+		padding-left: $internal-padding*2;
+	}
+}
+
+.row .production-list__sequence {
+	border-right: 1px solid $subtle-grey;
+	padding-right: 0;
+	article {
+		padding-right: 10%;
+	}
+}

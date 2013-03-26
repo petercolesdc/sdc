@@ -1,0 +1,19 @@
+.production-list {
+	article {
+		@include padding-trailer(4);
+		@include padding-leader(4);
+		@include trailer(4);
+		@include trailing-border (1px, 0, $para, solid);
+		border-color: $subtle-grey;
+		header {
+			@include trailer(2);
+			span {
+				@extend p;
+				display: block;
+				text-transform: lowercase;
+				font-variant: small-caps;
+				letter-spacing: em-font(3px);
+			}
+		}
+	}
+}

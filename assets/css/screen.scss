@@ -1,0 +1,36 @@
+// THIS STYLESHEET BRINGS TOGETHER THE SITE STYLES/
+// IT IS DONE IN THIS MANNER SO WE CAN GENERATE AN IE STYLESHEET AND STYLEGUIDE
+
+@import "compass/typography/vertical_rhythm";
+@import "compass/css3";
+@import "compass/utilities";
+
+
+// Try and keep css in this file to a minimum
+@import "libs/settings";
+@import "libs/mixins";
+
+// Import the site style combined
+@import "libs/reset";
+@import "libs/grid";
+@import "libs/content";
+
+// Import media quieries
+@import "libs/media-queries";
+
+// Import state styles
+@import "libs/states";
+
+// IOS specifics 
+@media screen and (max-width: 769px) {  // Absolute measure here, as we're talking about devices, not screen size
+	-webkit-text-size-adjust:none; 		// Stop iPhone/iPad from scaling text
+}
+
+// Print styles
+@media print {
+	body {
+		// Smaller type for printing. Save a tree
+		font-size: percentage(10 / 16);
+		@include adjust-leading-to(2);
+	}
+}

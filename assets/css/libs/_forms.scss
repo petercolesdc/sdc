@@ -1,0 +1,115 @@
+@import "settings";
+
+// SET UP YOUR FORMS IN THIS FILE
+
+// -----------------------------------------------------------
+
+
+// Reset defaults
+
+label {
+	display: block;
+	font-weight: 700;
+	margin: rhythm(3, $para) 0 rhythm(1, $para) 0;
+}
+
+fieldset.checkbox, 
+fieldset.radio {
+	label {
+		margin: rhythm(1, $para) 0 rhythm(1, $para) 0;
+	}
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	margin: 4px 0 0;
+	margin-top: 1px \9;
+	*margin-top: 0;
+	line-height: normal;
+	cursor: pointer;
+	position: relative;
+	top:-1px;
+	margin-right: 3px;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+}
+
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+	width: auto;
+}
+
+select,
+input[type="file"] {
+	*margin-top: 4px; 	
+}
+
+select:focus,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+	outline: thin dotted #333;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"] {
+	border: 2px solid $subtle-grey/1.2;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	border-radius: 3px;
+	@include padding-leader(1);
+	@include padding-trailer(1);
+	width: 99%;
+	//@include box-shadow(inset 0 1px 6px rgba(0,0,0,0.2)); 
+}
+
+input, textarea {
+	&:focus {
+		outline: 0;
+	}
+}
+
+select {
+	width: 99%;
+}
+
+fieldset {
+	@include trailer(4);
+	h2, h3, h4 {
+		font-weight: 700;
+		border-color: $subtle-grey/1.2;
+		@include padding-trailer(1);
+	}
+	h2 {
+		@include adjust-font-size-to($h2); 
+		@include trailing-border (2px, 0, $h2, solid);
+	}
+	h3 {
+		@include adjust-font-size-to($h3); 
+		@include trailing-border (2px, 0, $h3, solid);
+	}
+	h4 {
+		@include adjust-font-size-to($h4); 
+		@include trailing-border (2px, 0, $h4, solid);
+	}
+}

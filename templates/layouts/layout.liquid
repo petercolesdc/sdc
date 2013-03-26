@@ -1,0 +1,72 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-GB"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8 ie7" lang="en-GB"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9 ie8" lang="en-GB"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en-GB"><!--<![endif]-->
+<head>
+	<title>Drama Club {% block title %}{% endblock %}</title>
+	<!--[if gt IE 8]><!-->{{ "screen.min.css" | asset_url | stylesheet_tag }}<!--<![endif]-->
+	<!--[if lt IE 9]>{{ "ie-lt9.min.css" | asset_url | stylesheet_tag }}<!--<![endif]-->
+	{% block additionalcss %}{% endblock %}
+	<meta charset="UTF-8">
+	<meta content="on" http-equiv="cleartype" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+</head>
+<body>
+<div class="outer-wrapper">
+	<header class="global-header">
+		<div class="container">
+			<div class="row">
+				<h1 class="span6-3 span12-4 logo"><a href="/"rel="home">Saltford Drama Club</a></h1>
+				<nav class="span6-3 span12-8">
+					<ul>
+						<li><a href="/" rel="home">Home</a></li>
+						<li><a href="/about">About</a></li>
+						<li><a href="/productions">Productions</a></li>
+						<li><a href="/club-night">Club nights</a></li>
+						<li><a href="/murdger-mysteries">Murder mysteries</a></li>
+						<li><a href="/contact">Contact</a></li>
+						<li>T: <span class="tel">01225 872499</span></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	{% block content %}{% endblock %}
+	<footer class="global-footer">
+		<div class="container">
+			<div class="row typeset">
+				<article class="span6-2 span12-3">
+					<h5>Associations</h5>
+					<ul>
+						<li><a href="">Beehive</a></li>
+						<li><a href="">Kloggs</a></li>
+					</ul>
+				</article>
+				<article class="span6-2 span12-3">
+					<h5>Find us on</h5>
+					<ul>
+						<li><a href="">Twitter</a></li>
+						<li><a href="">Facebook</a></li>
+					</ul>
+				</article>	
+				<article class="span6-2 span12-6">
+					<h5>Legal bits</h5>
+					<p class="legal">All content &copy; 2013  Drama Club. All rights reserved unless otherwise stated</p>
+				</article>
+			</div>
+		</div>
+	</footer>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+	if (typeof jQuery == 'undefined') {
+    	document.write(unescape("%3Cscript src='assets/js/jquery-1.9.1.min.js' type='text/javascript'%3E%3C/script%3E"));
+	}
+</script>
+{% block additionaljs %} {% endblock %}
+{{ "script.js" | asset_url | script_tag }}
+</body>
+</html>

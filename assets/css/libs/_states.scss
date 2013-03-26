@@ -1,0 +1,26 @@
+// ::State styles 
+// ------------------------------------------------------------ 
+
+.is-shown, .is-block {
+	display: block;
+}
+
+.is-uppercase {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.is-lowercase {
+	text-transform: lowercase;
+}
+
+.as-alert {
+	background: #fff;
+	padding: 0.5em 1em;
+}
+
+// Hide things
+
+.is-hidden {
+	display: none;
+}

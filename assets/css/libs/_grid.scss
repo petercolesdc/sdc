@@ -1,0 +1,52 @@
+// ::Grid styles 
+// ------------------------------------------------------------ 
+
+.row {
+	@extend .clearfix;
+	&.row--padded {
+		padding-left: $internal-padding;
+		padding-right: $internal-padding;
+	}
+}
+
+.row [class*="span"] {
+	width: 100%;
+	float: left;
+	display: inline-block;
+	padding-left: $internal-padding;
+	padding-right: $internal-padding;
+	@include trailer(3);
+	> .row {
+		overflow: hidden;
+		width: 101%;
+		margin-left: -($internal-padding);
+		@include leader(3);
+	}
+}
+
+.row--grid-reverse [class*="span"] {
+	float: right;
+	.row--grid-unreverse [class*="span"] {
+		float: left;
+	}
+}
+
+.row [class*="span"] {
+	&.no-trailer {
+		margin-bottom: 0;
+	}
+}
+
+.row--grid-highlight article {
+	background: #eee;
+	padding: 1em;
+	h4 {
+		font-size: 12px;
+	}
+}
+
+.as-form .row {
+	[class*="span"] {
+		margin-bottom: 0;
+	}
+}

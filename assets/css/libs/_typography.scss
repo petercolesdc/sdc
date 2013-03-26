@@ -1,0 +1,194 @@
+@import "settings";
+@import "mixins";
+
+
+// Default Sizing and spacing
+// ------------------------------------------------------------
+
+$h1			: 28px;
+$h2			: 24px;
+$h3			: 20px;
+$h4			: 16px;
+$h5			: 16px;
+$h6			: 16px;
+$para		: 14px;
+$quote		: 21px;
+
+.sans-serif {
+	font-family: arial, sans-serif;
+}	
+	
+.serif {
+	font-family: georgia, serif;
+}
+
+.heading-one { 
+	@include adjust-font-size-to($h1); 
+	@extend .sans-serif;
+	font-weight: 700;
+}
+
+.heading-two {
+	@include adjust-font-size-to($h2); 
+	@extend .sans-serif;
+	font-weight: 700;
+}
+
+.heading-three {
+	@include adjust-font-size-to($h3); 
+	@extend .sans-serif;
+	font-weight: 700;
+}
+
+.heading-four {
+	@include adjust-font-size-to($h4); 
+	@extend .sans-serif;
+	font-weight: 700;
+}
+
+.heading-five {
+	@include adjust-font-size-to($h5); 
+	@extend .sans-serif;
+	font-weight: 700;
+}
+
+.heading-six {
+	@include adjust-font-size-to($h6); 
+	@extend .sans-serif;
+	font-weight: 700;
+}
+
+.heading-one.typeset { 
+	margin: 0 0 rhythm(2, $h1) 0;  
+}
+
+.heading-two.typeset {
+	margin: 0 0 rhythm(2, $h2) 0; 
+}
+
+.heading-three.typeset {
+	margin: 0 0 rhythm(2, $h3) 0;
+}
+
+.heading-four.typeset {
+	margin: 0 0 rhythm(2, $h4) 0; 
+}
+
+.heading-five.typeset {
+	margin: 0 0 rhythm(2, $h5) 0; 
+}
+
+.heading-six.typeset {
+	margin: 0 0 rhythm(2, $h6) 0; 
+}
+
+p.typeset {
+	@extend .as-para;
+}
+
+ul.typeset, 
+ol.typeset, 
+.as-descriptive-list {
+	@extend .as-list;
+}
+
+// Typeset elements in a parent
+
+.typeset {
+	h1 { 
+		margin: 0 0 rhythm(2, $h1) 0;  
+		@extend .heading-one;
+	}
+	
+	h2 {
+		margin: 0 0 rhythm(2, $h2) 0; 
+		@extend .heading-two;
+	}
+	
+	h3 {
+		margin: 0 0 rhythm(2, $h3) 0;
+		@extend .heading-three;
+	}
+	
+	h4 {
+		margin: 0 0 rhythm(2, $h4) 0; 
+		@extend .heading-four;
+	}
+	
+	h5 {
+		margin: 0 0 rhythm(2, $h5) 0; 
+		@extend .heading-five;
+	}
+	
+	h6 {
+		margin: 0 0 rhythm(2, $h6) 0;
+		@extend .heading-six; 
+	}
+	
+	p {
+		@extend .as-para;
+	}
+	
+	ul, ol {
+		@extend .as-list;
+	}
+	blockquote {
+		@extend .as-blockquote;
+	}
+}
+
+// Core typography
+// ------------------------------------------------------------
+
+ul 			{ @include nobullet; } 						
+ol 			{ @include nobullet; }	
+li 			{ line-height: auto; }					
+strong, b 	{ font-weight: 700; }
+em, i, q 	{ font-style: italic; }
+
+p, pre, label, input, textarea { 
+	@include adjust-font-size-to($para); 
+}
+
+ol, ul, dl {
+	@include adjust-font-size-to($para);	
+	ul, ol {
+		font-size: 100%;
+		padding-left: 1em;
+	}					
+}
+
+.as-para {
+	margin: 0 0 rhythm(2, $para) 0;
+}
+
+.as-list {
+	margin: 0 0 rhythm(4, $para) 0;	
+}
+
+.as-descriptive-list {
+	overflow: hidden;
+	dt, dd {
+		display: inline-block;
+		float: left;
+		@include force-wrap;
+	}
+	dt {
+		font-weight: 700;
+		width: 30%;
+	}
+	dd {
+		width: 70%;
+	}
+}
+
+.as-blockquote {
+	line-height: normal;
+	margin: 0;
+	p {
+		margin: 0;
+		font-style: italic;
+		@include adjust-font-size-to($quote); 
+		margin: rhythm(3, $quote) 0 rhythm(3, $quote) 0; 		
+	}
+}

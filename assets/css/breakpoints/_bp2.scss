@@ -1,0 +1,12 @@
+.logo {
+	margin-bottom: 0;
+}
+
+.global-header {
+	nav {
+		@include leader(0.5);
+		ul {
+			float: right;
+		}
+	}
+}
